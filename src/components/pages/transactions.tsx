@@ -1,5 +1,5 @@
 function Transactions() {
-    return (<> <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg mt-10">
+    return (<> <div className="max-w-lg mx-auto  bg-blue-400  p-6 rounded-lg shadow-lg mt-10">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           📊 Get Personalized Insights
         </h2>

@@ -1,4 +1,28 @@
+import { useState } from "react";
+
 function Home() {
+  const [transaction, setTransaction] = useState({
+    Kategorie: "",
+    amount: "",
+    Transaktionstyp: "",
+  });
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setTransaction({ ...transaction, [name]: value });
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const transactions = localStorage.getItem("transactions");
+    const transactionsArray = transactions ? JSON.parse(transactions) : [];
+    transactionsArray.push(transaction);
+    localStorage.setItem("transactions", JSON.stringify(transactionsArray));
+    // setTransaction({
+    //   Kategorie: "",
+    //   Betrag: null,
+    //   Transaktionstyp: "",
+    // });
+  };
   return (
     <>
      
@@ -9,7 +33,7 @@ function Home() {
 
           <form
             id="transaction-form"
-            className="mt-6 flex flex-col w-full space-y-4"
+            className="mt-6 flex flex-col w-full space-y-4"onSubmit={handleSubmit}
           >
             <div>
               <label
@@ -20,12 +44,15 @@ function Home() {
               </label>
               <select
                 id="description"
+                name="Kategorie"
+                value={transaction.Kategorie}
+                onChange={handleChange}
                 required
                 className="w-full p-3 border rounded-md mt-2 bg-gray-50 text-gray-800"
               >
                 <option value="Gehalt">Gehalt</option>
                 <option value="Miete">Miete</option>
-                <option value="investments">Investitionen</option>
+                <option value="Investitionen">Investitionen</option>
                 <option value="Lebensmittel">Lebensmittel</option>
                 <option value="Shopping">Shopping</option>
                 <option value="Freizeit">Freizeit</option>
@@ -43,6 +70,9 @@ function Home() {
               <input
                 id="amount"
                 type="number"
+                name="amount"
+                value={transaction.amount}
+                onChange={handleChange}
                 placeholder="Betrag (€)"
                 required
                 className="w-full p-3 border rounded-md mt-2 bg-gray-50 text-gray-800"
@@ -58,6 +88,10 @@ function Home() {
               </label>
               <select
                 id="type-of-transactions"
+                name="Transaktionstyp"
+                value={transaction.Transaktionstyp}
+                onChange={handleChange}
+                required
                 className="w-full p-3 border rounded-md mt-2 bg-gray-50 text-gray-800"
               >
                 <option value="income">Einnahme</option>

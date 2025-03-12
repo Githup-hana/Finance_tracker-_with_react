@@ -1,5 +1,5 @@
 function Crypto() {
-    return ( <>
+    return ( <div className="max-w-lg mx-auto bg-blue-400  p-6 rounded-lg shadow-lg mt-10">
         <h1 className="text-4xl font-bold mt-6 text-center text-gray-900">
           Krypto-Preise
         </h1>
@@ -72,8 +72,8 @@ function Crypto() {
           
           <div id="investment-result" className="mt-6"></div>
         </div>
-    
-      </> );
+        </div>
+      );
 }
 
 export default Crypto;
