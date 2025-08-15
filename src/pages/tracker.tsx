@@ -61,16 +61,24 @@ const dateString = today.toLocaleDateString("de-DE"); // ergibt z.B. 15.08.2025
   };
 
   return (
-    <>
-      <div className="max-w-2xl mx-auto bg-gradient-to-br from-blue-50 to-blue-200 p-4 sm:p-8 rounded-2xl shadow-xl mt-10 mb-10">
-        <h1 className="text-4xl font-extrabold text-center text-blue-700 mb-8 tracking-tight">💰 Finance Tracker</h1>
+    <section className="w-full flex flex-col items-center justify-center px-4 pt-12 pb-16">
+      <h1 className="text-5xl sm:text-6xl font-extrabold text-white drop-shadow-2xl mb-10 text-center flex items-center gap-3">
+        <span className="inline-block bg-blue-700/80 rounded-full p-3 shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-white">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+            <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" fill="none" />
+          </svg>
+        </span>
+        Finance Tracker
+      </h1>
+      <div className="flex flex-col md:flex-row gap-10 w-full max-w-4xl items-start justify-center">
         <form
           id="transaction-form"
-          className="flex flex-col gap-6 bg-white rounded-xl shadow-md p-6 sm:p-8"
+          className="flex-1 flex flex-col gap-6 bg-black/70 backdrop-blur-lg rounded-2xl shadow-2xl p-8 border border-white/10 min-w-[320px]"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-2">
-            <label htmlFor="description" className="block text-sm font-semibold text-gray-700">
+            <label htmlFor="description" className="block text-sm font-semibold text-white/90">
               Kategorie
             </label>
             <select
@@ -79,7 +87,7 @@ const dateString = today.toLocaleDateString("de-DE"); // ergibt z.B. 15.08.2025
               value={transaction.Kategorie}
               onChange={handleChange}
               required
-              className="w-full p-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-gray-800 focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 border-2 border-white/10 rounded-lg bg-white/10 text-white focus:ring-2 focus:ring-blue-400"
             >
               <option value="Gehalt">Gehalt</option>
               <option value="Miete">Miete</option>
@@ -92,7 +100,7 @@ const dateString = today.toLocaleDateString("de-DE"); // ergibt z.B. 15.08.2025
             </select>
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="amount" className="block text-sm font-semibold text-gray-700">
+            <label htmlFor="amount" className="block text-sm font-semibold text-white/90">
               Betrag (€)
             </label>
             <input
@@ -103,11 +111,11 @@ const dateString = today.toLocaleDateString("de-DE"); // ergibt z.B. 15.08.2025
               onChange={handleChange}
               placeholder="Betrag (€)"
               required
-              className="w-full p-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-gray-800 focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 border-2 border-white/10 rounded-lg bg-white/10 text-white focus:ring-2 focus:ring-blue-400 placeholder:text-white/60"
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="type-of-transactions" className="block text-sm font-semibold text-gray-700">
+            <label htmlFor="type-of-transactions" className="block text-sm font-semibold text-white/90">
               Transaktionstyp
             </label>
             <select
@@ -116,7 +124,7 @@ const dateString = today.toLocaleDateString("de-DE"); // ergibt z.B. 15.08.2025
               value={transaction.Transaktionstyp}
               onChange={handleChange}
               required
-              className="w-full p-3 border-2 border-gray-200 rounded-lg bg-gray-50 text-gray-800 focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 border-2 border-white/10 rounded-lg bg-white/10 text-white focus:ring-2 focus:ring-blue-400"
             >
               <option value="income">Einnahme</option>
               <option value="expense">Ausgabe</option>
@@ -125,20 +133,22 @@ const dateString = today.toLocaleDateString("de-DE"); // ergibt z.B. 15.08.2025
           <div>
             <button
               type="submit"
-              className="w-full py-3 mt-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 text-lg"
+              className="w-full py-3 mt-2 bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-900 transition-colors duration-300 text-lg"
             >
               Hinzufügen
             </button>
           </div>
         </form>
-        <div className="text-center mt-8">
-          <p className="text-base text-gray-600 font-semibold">Aktuelles Guthaben:</p>
-          <span id="balance" className="font-extrabold text-3xl text-green-600">
-            {balance} €
-          </span>
+        <div className="flex-1 flex flex-col items-center justify-center gap-6 min-w-[260px]">
+          <div className="bg-black/70 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/10 px-8 py-10 flex flex-col items-center">
+            <span className="text-base text-white/80 font-semibold mb-2">Aktuelles Guthaben</span>
+            <span id="balance" className="font-extrabold text-4xl sm:text-5xl text-green-300 drop-shadow-lg">
+              {balance} €
+            </span>
+          </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
