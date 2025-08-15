@@ -19,6 +19,11 @@ function Home() {
 			<div className="mt-10 text-center text-gray-500 text-sm">
 				<span>Deine Daten bleiben sicher im Browser gespeichert. Viel Erfolg beim Finanzmanagement! 🚀</span>
 			</div>
+			<div className="mt-6 text-center text-gray-600 text-sm">
+				Noch kein Account?{' '}
+				<Link to="/register" className="text-blue-600 hover:underline">Jetzt registrieren</Link>
+			</div>
+      
 		</div>
 	);
 }
