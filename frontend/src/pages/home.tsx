@@ -39,7 +39,7 @@ const Home: React.FC = () => {
 					</div>
 					<h2 className="text-2xl font-bold text-blue-800 mb-2">Finance Tracker</h2>
 					<p className="text-gray-800 text-center mb-6">Verwalte deine Einnahmen und Ausgaben einfach und übersichtlich.</p>
-					<Link to="/login" className="w-full py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-900 transition">Jetzt starten</Link>
+					<Link to="/login" className="w-full py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-900 transition text-center">Jetzt starten</Link>
 				</div>
 				
 				{/* Transactions Card */}
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
 					</div>
 					<h2 className="text-2xl font-bold text-green-800 mb-2">Transaktionen</h2>
 					<p className="text-gray-800 text-center mb-6">Behalte alle deine Transaktionen im Blick und filtere nach Kategorie.</p>
-					<Link to="/register" className="w-full py-3 bg-green-700 text-white rounded-lg font-semibold shadow hover:bg-green-900 transition">Registrieren</Link>
+					<Link to="/register" className="w-full py-3 bg-green-700 text-white rounded-lg font-semibold shadow hover:bg-green-900 transition text-center">Registrieren</Link>
 				</div>
 				
 				{/* Investments Card */}
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
 					</div>
 					<h2 className="text-2xl font-bold text-purple-800 mb-2">Investments</h2>
 					<p className="text-gray-800 text-center mb-6">Analysiere deine Investments, Gewinne und Verluste übersichtlich.</p>
-					<Link to="/register" className="w-full py-3 bg-purple-700 text-white rounded-lg font-semibold shadow hover:bg-purple-900 transition">Investieren starten</Link>
+					<Link to="/register" className="w-full py-3 bg-purple-700 text-white rounded-lg font-semibold shadow hover:bg-purple-900 transition text-center">Investieren starten</Link>
 				</div>
 				
 				{/* Crypto Card */}
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
 					</div>
 					<h2 className="text-2xl font-bold text-yellow-700 mb-2">Krypto-Preise</h2>
 					<p className="text-gray-800 text-center mb-6">Checke aktuelle Krypto-Preise und verfolge deine Coins.</p>
-					<Link to="/register" className="w-full py-3 bg-yellow-500 text-white rounded-lg font-semibold shadow hover:bg-yellow-600 transition">Krypto entdecken</Link>
+					<Link to="/register" className="w-full py-3 bg-yellow-500 text-white rounded-lg font-semibold shadow hover:bg-yellow-600 transition text-center">Krypto entdecken</Link>
 				</div>
 			</div>
 			
