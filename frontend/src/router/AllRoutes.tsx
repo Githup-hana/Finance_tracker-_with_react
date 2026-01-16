@@ -18,6 +18,9 @@ import { ProtectedRoute, PublicRoute } from "../components/ProtectedRoute";
 function AllRoutes() {
   return (
     <Routes>
+      {/* Temporäre öffentliche Routen für Demo/Fehlerfall (kein Login benötigt) */}
+      <Route path="/tracker-public" element={<Tracker />} />
+
       {/* Öffentliche Routes - nur für nicht-eingeloggte User */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={

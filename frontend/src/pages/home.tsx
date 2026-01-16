@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 
@@ -11,10 +11,8 @@ const Home: React.FC = () => {
 		return <LoadingSpinner fullScreen={true} />;
 	}
 	
-	// Redirect authenticated users to dashboard
-	if (user) {
-		return <Navigate to="/dashboard" replace />;
-	}
+	// Note: do not redirect authenticated users here so the homepage
+	// remains visible when login/register are not working.
 	
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex flex-col justify-center items-center px-4 py-8">
@@ -39,7 +37,7 @@ const Home: React.FC = () => {
 					</div>
 					<h2 className="text-2xl font-bold text-blue-800 mb-2">Finance Tracker</h2>
 					<p className="text-gray-800 text-center mb-6">Verwalte deine Einnahmen und Ausgaben einfach und übersichtlich.</p>
-					<Link to="/login" className="w-full py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-900 transition text-center">Jetzt starten</Link>
+					<Link to="/tracker-public" className="w-full py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-900 transition text-center">Jetzt starten</Link>
 				</div>
 				
 				{/* Transactions Card */}
